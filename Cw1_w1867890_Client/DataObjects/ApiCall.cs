@@ -78,8 +78,8 @@ namespace Cw1_w1867890.DataObjects
                 result = streamReader.ReadToEnd();
             }
 
-            Console.WriteLine(httpResponse.StatusCode);
-            Console.WriteLine(result);
+            //Console.WriteLine(httpResponse.StatusCode);
+            //Console.WriteLine(result);
             return result;
         }
     }

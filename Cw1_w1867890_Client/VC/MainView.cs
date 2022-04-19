@@ -20,13 +20,8 @@ namespace Cw1_w1867890.VC
         public MainView()
         {
             InitializeComponent();
-
-            DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
-            String JsonString = apiCall.ApiGET(DataObjects.ApiCall.readAllCategory.ToString());
-            DataTable dt = (DataTable)JsonConvert.DeserializeObject(JsonString, (typeof(DataTable)));
-            DataObjects.DbInfo.dbInfo.tblCategory.Equals(dt);
-            dbInfo.tblCategory.Equals((DataTable)dt);
-
+            DataObjects.DbInfo.SyncCategoryData();
+            
             dataGridView1.DataSource = dbInfo.tblCategory;
         }
 

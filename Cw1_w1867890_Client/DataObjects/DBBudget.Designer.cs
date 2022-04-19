@@ -495,7 +495,8 @@ namespace Cw1_w1867890.DataObjects {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("tblCategoryKey", new global::System.Data.DataColumn[] {
                                 this.columncatId}, true));
                 this.columncatId.AutoIncrement = true;
-                this.columncatId.AutoIncrementSeed = 1;
+                this.columncatId.AutoIncrementSeed = -1;
+                this.columncatId.AutoIncrementStep = -1;
                 this.columncatId.AllowDBNull = false;
                 this.columncatId.Unique = true;
             }

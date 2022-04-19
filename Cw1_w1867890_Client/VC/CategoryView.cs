@@ -69,21 +69,7 @@ namespace Cw1_w1867890.VC
                     DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
                     MessageBox.Show(apiCall.ApiPOST(DataObjects.ApiCall.createCategory.ToString(), data));
 
-                    apiCall = new DataObjects.ApiCall();
-                    String JsonString = apiCall.ApiGET(DataObjects.ApiCall.readAllCategory.ToString());
-                    DataTable dt = (DataTable)JsonConvert.DeserializeObject(JsonString, (typeof(DataTable)));
-                    DataObjects.DbInfo.dbInfo.tblCategory.Equals(dt);
-                    dgvCategory.DataSource = dt;
-                    this.dbInfo.tblCategory.Equals(dt);
-
-
-                    //apiCall = new DataObjects.ApiCall();
-                    ////MessageBox.Show(apiCall.ApiGET(DataObjects.ApiCall.readAllCategory.ToString()));
-
-                    //String JsonString = apiCall.ApiGET(DataObjects.ApiCall.readAllCategory.ToString());
-
-                    //DataTable dt = (DataTable)JsonConvert.DeserializeObject(JsonString, (typeof(DataTable)));
-                    //DataObjects.DbInfo.dbInfo.tblCategory.Equals(dt);
+                    DataObjects.DbInfo.SyncCategoryData();
                 }
                 else
                 {
