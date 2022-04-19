@@ -39,7 +39,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tblCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dBBudget = new Cw1_w1867890.DataObjects.DBBudget();
-            this.btnAddTemp = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblCategoryBindingSource)).BeginInit();
@@ -124,22 +123,11 @@
             this.dBBudget.DataSetName = "DBBudget";
             this.dBBudget.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnAddTemp
-            // 
-            this.btnAddTemp.Location = new System.Drawing.Point(504, 377);
-            this.btnAddTemp.Name = "btnAddTemp";
-            this.btnAddTemp.Size = new System.Drawing.Size(75, 23);
-            this.btnAddTemp.TabIndex = 2;
-            this.btnAddTemp.Text = "Add";
-            this.btnAddTemp.UseVisualStyleBackColor = true;
-            this.btnAddTemp.Click += new System.EventHandler(this.AddTemp);
-            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAddTemp);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -169,7 +157,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource tblCategoryBindingSource;
         private DataObjects.DBBudget dBBudget;
-        private System.Windows.Forms.Button btnAddTemp;
     }
 }
 

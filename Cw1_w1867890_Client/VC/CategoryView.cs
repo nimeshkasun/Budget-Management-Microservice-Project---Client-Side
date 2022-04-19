@@ -64,7 +64,7 @@ namespace Cw1_w1867890.VC
                     dataToConvert.CatBudget = Double.Parse(txtCategoryBudget.Text);
 
                     var data = Newtonsoft.Json.JsonConvert.SerializeObject(dataToConvert);
-                    Console.WriteLine(data);
+                    //Console.WriteLine(data);
 
                     DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
                     MessageBox.Show(apiCall.ApiPOST(DataObjects.ApiCall.createCategory.ToString(), data));

@@ -49,17 +49,5 @@ namespace Cw1_w1867890.VC
             return dbInfo;
         }
 
-        private void AddTemp(object sender, EventArgs e)
-        {
-            var data = @"{
-  ""CategoryName"": ""JSONCat"",
-  ""CategoryType"": ""TestJSON"",
-  ""CategoryBudget"": 18.00
-}";
-            DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
-            MessageBox.Show(apiCall.ApiPOST(DataObjects.ApiCall.createCategory.ToString(), data));
-
-
-        }
     }
 }

@@ -34,31 +34,38 @@ namespace Cw1_w1867890.DataObjects
             var url = postUrl;
             var data = postData;
 
-            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
-            httpRequest.Method = "POST";
-
-            httpRequest.Accept = "application/json";
-            httpRequest.ContentType = "application/json";
-
-            using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
+            try
             {
-                streamWriter.Write(data);
-            }
+                var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+                httpRequest.Method = "POST";
 
-            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-            }
+                httpRequest.Accept = "application/json";
+                httpRequest.ContentType = "application/json";
 
-            Console.WriteLine(httpResponse.StatusCode);
-            if(httpResponse.StatusCode == HttpStatusCode.Accepted)
+                using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
+                {
+                    streamWriter.Write(data);
+                }
+
+                var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                }
+
+                Console.WriteLine(httpResponse.StatusCode);
+                if (httpResponse.StatusCode == HttpStatusCode.Accepted)
+                {
+                    return "Success!";
+                }
+                else
+                {
+                    return "Failed!";
+                }
+            }catch (Exception ex)
             {
-                return "Success!";
-            }
-            else
-            {
-                return "Failed!";
+                String error = "API Request Rejected! Error: " + ex;
+                return error;
             }
 
         }
@@ -67,20 +74,28 @@ namespace Cw1_w1867890.DataObjects
         {
             var url = postUrl;
 
-            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
-
-            httpRequest.Accept = "application/json";
-
-            var result = "";
-            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            try
             {
-                result = streamReader.ReadToEnd();
-            }
+                var httpRequest = (HttpWebRequest)WebRequest.Create(url);
 
-            //Console.WriteLine(httpResponse.StatusCode);
-            //Console.WriteLine(result);
-            return result;
+                httpRequest.Accept = "application/json";
+
+                var result = "";
+                var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    result = streamReader.ReadToEnd();
+                }
+
+                //Console.WriteLine(httpResponse.StatusCode);
+                //Console.WriteLine(result);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                String error = "API Request Rejected! Error: " + ex;
+                return error;
+            }
         }
     }
 }
