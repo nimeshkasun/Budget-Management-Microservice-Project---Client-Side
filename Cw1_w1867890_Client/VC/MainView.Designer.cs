@@ -39,6 +39,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tblCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dBBudget = new Cw1_w1867890.DataObjects.DBBudget();
+            this.synchronizeDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblCategoryBindingSource)).BeginInit();
@@ -60,6 +61,7 @@
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.synchronizeDataToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
@@ -68,7 +70,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitApplication);
             // 
@@ -84,14 +86,14 @@
             // newCategoryToolStripMenuItem
             // 
             this.newCategoryToolStripMenuItem.Name = "newCategoryToolStripMenuItem";
-            this.newCategoryToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.newCategoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newCategoryToolStripMenuItem.Text = "Category";
             this.newCategoryToolStripMenuItem.Click += new System.EventHandler(this.RunCategoryView);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateToolStripMenuItem.Text = "Transaction";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.RunTransactionView);
             // 
@@ -122,6 +124,13 @@
             // 
             this.dBBudget.DataSetName = "DBBudget";
             this.dBBudget.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // synchronizeDataToolStripMenuItem
+            // 
+            this.synchronizeDataToolStripMenuItem.Name = "synchronizeDataToolStripMenuItem";
+            this.synchronizeDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.synchronizeDataToolStripMenuItem.Text = "Synchronize Data";
+            this.synchronizeDataToolStripMenuItem.Click += new System.EventHandler(this.SynchronizeDataManually);
             // 
             // MainView
             // 
@@ -157,6 +166,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource tblCategoryBindingSource;
         private DataObjects.DBBudget dBBudget;
+        private System.Windows.Forms.ToolStripMenuItem synchronizeDataToolStripMenuItem;
     }
 }
 

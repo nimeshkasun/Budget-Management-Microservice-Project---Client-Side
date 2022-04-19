@@ -49,5 +49,10 @@ namespace Cw1_w1867890.VC
             return dbInfo;
         }
 
+        private void SynchronizeDataManually(object sender, EventArgs e)
+        {
+            DataObjects.DbInfo.SyncCategoryData();
+            //DataObjects.DbInfo.SyncTransactionData();
+        }
     }
 }
