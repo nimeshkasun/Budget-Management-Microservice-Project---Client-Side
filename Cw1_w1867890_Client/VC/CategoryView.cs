@@ -52,6 +52,10 @@ namespace Cw1_w1867890.VC
                     {
                         row.catBudget = Double.Parse(txtCategoryBudget.Text);
                     }
+                    else
+                    {
+                        row.catBudget = Double.Parse("0.0");
+                    }
                     this.dbInfo.tblCategory.AddtblCategoryRow(row);
                     this.dbInfo.tblCategory.AcceptChanges();
 
@@ -61,7 +65,14 @@ namespace Cw1_w1867890.VC
                     dynamic dataToConvert = new ExpandoObject();
                     dataToConvert.CatName = txtCategoryName.Text;
                     dataToConvert.CatType = cmbCategoryType.SelectedItem.ToString();
-                    dataToConvert.CatBudget = Double.Parse(txtCategoryBudget.Text);
+                    if (cmbCategoryType.SelectedItem.ToString() == "Expense")
+                    {
+                        dataToConvert.CatBudget = Double.Parse(txtCategoryBudget.Text);
+                    }
+                    else
+                    {
+                        dataToConvert.CatBudget = Double.Parse("0.0");
+                    }                    
 
                     var data = Newtonsoft.Json.JsonConvert.SerializeObject(dataToConvert);
                     //Console.WriteLine(data);
