@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,24 @@ namespace Cw1_w1867890.VC
 
                     this.dbInfo.tblTransaction.AddtblTransactionRow(row);
                     this.dbInfo.tblTransaction.AcceptChanges();
+
+                    //
+                    // API Call
+                    //
+                    dynamic dataToConvert = new ExpandoObject();
+                    dataToConvert.tranCatId = Int32.Parse(cmbTransactionCategory.SelectedValue.ToString());
+                    dataToConvert.tranDescription = txtTransactionDescription.Text;
+                    dataToConvert.tranDate = dateTransactionDate.Value;
+                    dataToConvert.tranRecurring = chkTransactionRecurring.Checked;
+                    dataToConvert.tranAmount = Double.Parse(txtTransactionAmount.Text);
+
+                    var data = Newtonsoft.Json.JsonConvert.SerializeObject(dataToConvert);
+                    //Console.WriteLine(data);
+
+                    DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
+                    MessageBox.Show(apiCall.ApiPOST(DataObjects.ApiCall.createTransaction.ToString(), data));
+
+                    DataObjects.DbInfo.SyncTransactionData();
                 }
                 else
                 {
@@ -73,6 +92,24 @@ namespace Cw1_w1867890.VC
                         row[5] = Double.Parse(txtTransactionAmount.Text);
                     }
                     dbInfo.Tables[0].AcceptChanges();
+
+                    //
+                    // API Call
+                    //
+                    dynamic dataToConvert = new ExpandoObject();
+                    dataToConvert.tranCatId = Int32.Parse(cmbTransactionCategory.SelectedValue.ToString());
+                    dataToConvert.tranDescription = txtTransactionDescription.Text;
+                    dataToConvert.tranDate = dateTransactionDate.Value;
+                    dataToConvert.tranRecurring = chkTransactionRecurring.Checked;
+                    dataToConvert.tranAmount = Double.Parse(txtTransactionAmount.Text);
+
+                    var data = Newtonsoft.Json.JsonConvert.SerializeObject(dataToConvert);
+                    //Console.WriteLine(data);
+
+                    DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
+                    MessageBox.Show(apiCall.ApiPUT(DataObjects.ApiCall.updateTransaction.ToString() + lblTransactionId.Text, data));
+
+                    DataObjects.DbInfo.SyncTransactionData();
                 }
             }
             dgvTransaction.DataSource = this.dbInfo.tblTransaction;
@@ -215,6 +252,15 @@ namespace Cw1_w1867890.VC
                 row.Delete();
             }
             dbInfo.Tables[0].AcceptChanges();
+
+            //
+            // API Call
+            //
+            DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
+            MessageBox.Show(apiCall.ApiDELETE(DataObjects.ApiCall.deleteTransaction.ToString() + lblTransactionId.Text)); ;
+
+            DataObjects.DbInfo.SyncTransactionData();
+
 
             lblTransactionId.Text = "~";
             cmbTransactionCategory.SelectedIndex = -1;

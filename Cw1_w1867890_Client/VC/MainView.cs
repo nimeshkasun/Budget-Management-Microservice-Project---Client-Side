@@ -21,7 +21,8 @@ namespace Cw1_w1867890.VC
         {
             InitializeComponent();
             DataObjects.DbInfo.SyncCategoryData();
-            
+            DataObjects.DbInfo.SyncTransactionData();
+
             dataGridView1.DataSource = dbInfo.tblCategory;
         }
 
@@ -52,7 +53,7 @@ namespace Cw1_w1867890.VC
         private void SynchronizeDataManually(object sender, EventArgs e)
         {
             DataObjects.DbInfo.SyncCategoryData();
-            //DataObjects.DbInfo.SyncTransactionData();
+            DataObjects.DbInfo.SyncTransactionData();
         }
     }
 }

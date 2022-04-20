@@ -26,11 +26,11 @@ namespace Cw1_w1867890.DataObjects
         public static String updateCategory = gatewayHost + gatewayServiceCategory + "category/update/";        // {id}
         public static String deleteCategory = gatewayHost + gatewayServiceCategory + "category/delete/";        // {id}
 
-        public static String readAllTransaction = gatewayHost + gatewayServiceTransaction + "category/search/all";
-        public static String createTransaction = gatewayHost + gatewayServiceTransaction + "category/create";
-        public static String transactionSearchById = gatewayHost + gatewayServiceTransaction + "category/search/";    // {id}
-        public static String updateTransaction = gatewayHost + gatewayServiceTransaction + "category/update/";        // {id}
-        public static String deleteTransaction = gatewayHost + gatewayServiceTransaction + "category/delete/";        // {id}
+        public static String readAllTransaction = gatewayHost + gatewayServiceTransaction + "transaction/search/all";
+        public static String createTransaction = gatewayHost + gatewayServiceTransaction + "transaction/create";
+        public static String transactionSearchById = gatewayHost + gatewayServiceTransaction + "transaction/search/";    // {id}
+        public static String updateTransaction = gatewayHost + gatewayServiceTransaction + "transaction/update/";        // {id}
+        public static String deleteTransaction = gatewayHost + gatewayServiceTransaction + "transaction/delete/";        // {id}
 
 
         //

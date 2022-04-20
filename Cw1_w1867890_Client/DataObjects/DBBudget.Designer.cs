@@ -28,8 +28,6 @@ namespace Cw1_w1867890.DataObjects {
         
         private tblTransactionDataTable tabletblTransaction;
         
-        private global::System.Data.DataRelation relationFK_tblCategory_tblTransaction;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -220,7 +218,6 @@ namespace Cw1_w1867890.DataObjects {
                     this.tabletblTransaction.InitVars();
                 }
             }
-            this.relationFK_tblCategory_tblTransaction = this.Relations["FK_tblCategory_tblTransaction"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -235,18 +232,6 @@ namespace Cw1_w1867890.DataObjects {
             base.Tables.Add(this.tabletblCategory);
             this.tabletblTransaction = new tblTransactionDataTable();
             base.Tables.Add(this.tabletblTransaction);
-            global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_tblCategory_tblTransaction", new global::System.Data.DataColumn[] {
-                        this.tabletblCategory.catIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletblTransaction.tranCatIdColumn});
-            this.tabletblTransaction.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_tblCategory_tblTransaction = new global::System.Data.DataRelation("FK_tblCategory_tblTransaction", new global::System.Data.DataColumn[] {
-                        this.tabletblCategory.catIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletblTransaction.tranCatIdColumn}, false);
-            this.Relations.Add(this.relationFK_tblCategory_tblTransaction);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -762,18 +747,15 @@ namespace Cw1_w1867890.DataObjects {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblTransactionRow AddtblTransactionRow(tblCategoryRow parenttblCategoryRowByFK_tblCategory_tblTransaction, string tranDescription, System.DateTime tranDate, bool tranRecurring, double tranAmount) {
+            public tblTransactionRow AddtblTransactionRow(int tranCatId, string tranDescription, System.DateTime tranDate, bool tranRecurring, double tranAmount) {
                 tblTransactionRow rowtblTransactionRow = ((tblTransactionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
+                        tranCatId,
                         tranDescription,
                         tranDate,
                         tranRecurring,
                         tranAmount};
-                if ((parenttblCategoryRowByFK_tblCategory_tblTransaction != null)) {
-                    columnValuesArray[1] = parenttblCategoryRowByFK_tblCategory_tblTransaction[0];
-                }
                 rowtblTransactionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblTransactionRow);
                 return rowtblTransactionRow;
@@ -829,7 +811,8 @@ namespace Cw1_w1867890.DataObjects {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("tblTransactionKey", new global::System.Data.DataColumn[] {
                                 this.columntranId}, true));
                 this.columntranId.AutoIncrement = true;
-                this.columntranId.AutoIncrementSeed = 1;
+                this.columntranId.AutoIncrementSeed = -1;
+                this.columntranId.AutoIncrementStep = -1;
                 this.columntranId.AllowDBNull = false;
                 this.columntranId.Unique = true;
             }
@@ -1066,17 +1049,6 @@ namespace Cw1_w1867890.DataObjects {
             public void SetcatBudgetNull() {
                 this[this.tabletblCategory.catBudgetColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblTransactionRow[] GettblTransactionRows() {
-                if ((this.Table.ChildRelations["FK_tblCategory_tblTransaction"] == null)) {
-                    return new tblTransactionRow[0];
-                }
-                else {
-                    return ((tblTransactionRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tblCategory_tblTransaction"])));
-                }
-            }
         }
         
         /// <summary>
@@ -1181,17 +1153,6 @@ namespace Cw1_w1867890.DataObjects {
                 }
                 set {
                     this[this.tabletblTransaction.tranAmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblCategoryRow tblCategoryRow {
-                get {
-                    return ((tblCategoryRow)(this.GetParentRow(this.Table.ParentRelations["FK_tblCategory_tblTransaction"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_tblCategory_tblTransaction"]);
                 }
             }
             

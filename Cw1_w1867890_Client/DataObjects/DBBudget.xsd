@@ -25,7 +25,7 @@
         <xs:element name="tblTransaction" msprop:Generator_RowEvHandlerName="tblTransactionRowChangeEventHandler" msprop:Generator_RowDeletedName="tblTransactionRowDeleted" msprop:Generator_RowDeletingName="tblTransactionRowDeleting" msprop:Generator_RowEvArgName="tblTransactionRowChangeEvent" msprop:Generator_TablePropName="tblTransaction" msprop:Generator_RowChangedName="tblTransactionRowChanged" msprop:Generator_UserTableName="tblTransaction" msprop:Generator_RowChangingName="tblTransactionRowChanging" msprop:Generator_RowClassName="tblTransactionRow" msprop:Generator_TableClassName="tblTransactionDataTable" msprop:Generator_TableVarName="tabletblTransaction">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="tranId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnPropNameInTable="tranIdColumn" msprop:Generator_ColumnPropNameInRow="tranId" msprop:Generator_UserColumnName="tranId" msprop:Generator_ColumnVarNameInTable="columntranId" type="xs:int" />
+              <xs:element name="tranId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="tranIdColumn" msprop:Generator_ColumnPropNameInRow="tranId" msprop:Generator_UserColumnName="tranId" msprop:Generator_ColumnVarNameInTable="columntranId" type="xs:int" />
               <xs:element name="tranCatId" msprop:Generator_ColumnPropNameInTable="tranCatIdColumn" msprop:Generator_ColumnPropNameInRow="tranCatId" msprop:Generator_UserColumnName="tranCatId" msprop:Generator_ColumnVarNameInTable="columntranCatId" type="xs:int" minOccurs="0" />
               <xs:element name="tranDescription" msprop:Generator_ColumnPropNameInTable="tranDescriptionColumn" msprop:Generator_ColumnPropNameInRow="tranDescription" msprop:Generator_UserColumnName="tranDescription" msprop:Generator_ColumnVarNameInTable="columntranDescription" type="xs:string" minOccurs="0" />
               <xs:element name="tranDate" msprop:Generator_ColumnPropNameInTable="tranDateColumn" msprop:Generator_ColumnPropNameInRow="tranDate" msprop:Generator_UserColumnName="tranDate" msprop:Generator_ColumnVarNameInTable="columntranDate" type="xs:dateTime" minOccurs="0" />
@@ -44,9 +44,5 @@
       <xs:selector xpath=".//mstns:tblTransaction" />
       <xs:field xpath="mstns:tranId" />
     </xs:unique>
-    <xs:keyref name="FK_tblCategory_tblTransaction" refer="tblCategoryKey" msprop:rel_Generator_UserParentTable="tblCategory" msprop:rel_Generator_UserChildTable="tblTransaction" msprop:rel_Generator_RelationVarName="relationFK_tblCategory_tblTransaction" msprop:rel_Generator_ChildPropName="GettblTransactionRows" msprop:rel_Generator_UserRelationName="FK_tblCategory_tblTransaction" msprop:rel_Generator_ParentPropName="tblCategoryRow">
-      <xs:selector xpath=".//mstns:tblTransaction" />
-      <xs:field xpath="mstns:tranCatId" />
-    </xs:keyref>
   </xs:element>
 </xs:schema>
