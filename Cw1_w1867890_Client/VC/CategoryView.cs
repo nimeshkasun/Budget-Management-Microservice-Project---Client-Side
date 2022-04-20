@@ -108,6 +108,29 @@ namespace Cw1_w1867890.VC
                         }
                     }
                     dbInfo.Tables[0].AcceptChanges();
+
+                    //
+                    // API Call
+                    //
+                    dynamic dataToConvert = new ExpandoObject();
+                    dataToConvert.CatName = txtCategoryName.Text;
+                    dataToConvert.CatType = cmbCategoryType.SelectedItem.ToString();
+                    if (cmbCategoryType.SelectedItem.ToString() == "Expense")
+                    {
+                        dataToConvert.CatBudget = Double.Parse(txtCategoryBudget.Text);
+                    }
+                    else
+                    {
+                        dataToConvert.CatBudget = Double.Parse("0.0");
+                    }
+
+                    var data = Newtonsoft.Json.JsonConvert.SerializeObject(dataToConvert);
+                    //Console.WriteLine(data);
+
+                    DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
+                    MessageBox.Show(apiCall.ApiPUT(DataObjects.ApiCall.updateCategory.ToString() + lblCategoryId.Text, data));
+
+                    DataObjects.DbInfo.SyncCategoryData();
                 }
             }
             dgvCategory.DataSource = this.dbInfo.tblCategory;
@@ -235,6 +258,15 @@ namespace Cw1_w1867890.VC
                 row.Delete();
             }
             dbInfo.Tables[0].AcceptChanges();
+
+            //
+            // API Call
+            //
+            DataObjects.ApiCall apiCall = new DataObjects.ApiCall();
+            MessageBox.Show(apiCall.ApiDELETE(DataObjects.ApiCall.deleteCategory.ToString() + lblCategoryId.Text)); ;
+
+            DataObjects.DbInfo.SyncCategoryData();
+
 
             lblCategoryId.Text = "~";
             txtCategoryName.Text = "";
