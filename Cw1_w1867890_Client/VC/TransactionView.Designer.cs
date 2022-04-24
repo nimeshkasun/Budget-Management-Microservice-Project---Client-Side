@@ -65,6 +65,7 @@
             this.dgvTransaction.AllowUserToAddRows = false;
             this.dgvTransaction.AllowUserToDeleteRows = false;
             this.dgvTransaction.AllowUserToOrderColumns = true;
+            this.dgvTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransaction.Location = new System.Drawing.Point(94, 131);
             this.dgvTransaction.Name = "dgvTransaction";
@@ -323,6 +324,7 @@
             this.Controls.Add(this.btnTranNew);
             this.Controls.Add(this.btnTranSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TransactionView";
             this.Text = "Transaction Management";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).EndInit();

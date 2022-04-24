@@ -223,6 +223,7 @@
             this.dgvCategory.AllowUserToAddRows = false;
             this.dgvCategory.AllowUserToDeleteRows = false;
             this.dgvCategory.AllowUserToOrderColumns = true;
+            this.dgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategory.Location = new System.Drawing.Point(94, 131);
             this.dgvCategory.Name = "dgvCategory";
@@ -242,6 +243,7 @@
             this.Controls.Add(this.btnCatNew);
             this.Controls.Add(this.btnCatSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CategoryView";
             this.Text = "Category Management";
             this.groupBox1.ResumeLayout(false);

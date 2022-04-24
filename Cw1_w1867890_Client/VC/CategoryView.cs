@@ -29,7 +29,12 @@ namespace Cw1_w1867890.VC
                 //dbInfo = mainView.DbInfo.dbInfoData;
                 dbInfo = DataObjects.DbInfo.dbInfo;
                 dgvCategory.DataSource = this.dbInfo.tblCategory;
-            }catch (Exception ex)
+                dgvCategory.Columns["catId"].HeaderCell.Value = "Category ID";
+                dgvCategory.Columns["catName"].HeaderCell.Value = "Category Name";
+                dgvCategory.Columns["catType"].HeaderCell.Value = "Category Type";
+                dgvCategory.Columns["catBudget"].HeaderCell.Value = "Category Budget";
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

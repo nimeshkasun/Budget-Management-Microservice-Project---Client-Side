@@ -47,15 +47,16 @@
             // 
             // dateSelectedPredictionFutureDate
             // 
-            this.dateSelectedPredictionFutureDate.Location = new System.Drawing.Point(207, 13);
+            this.dateSelectedPredictionFutureDate.Location = new System.Drawing.Point(207, 9);
             this.dateSelectedPredictionFutureDate.Name = "dateSelectedPredictionFutureDate";
             this.dateSelectedPredictionFutureDate.Size = new System.Drawing.Size(239, 20);
             this.dateSelectedPredictionFutureDate.TabIndex = 1;
+            this.dateSelectedPredictionFutureDate.ValueChanged += new System.EventHandler(this.PredictIncomeExpense);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 46);
+            this.label2.Location = new System.Drawing.Point(13, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 2;
@@ -64,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 76);
+            this.label3.Location = new System.Drawing.Point(13, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 3;
@@ -100,6 +101,8 @@
             this.Controls.Add(this.dateSelectedPredictionFutureDate);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TransactionViewPrediction";
             this.Text = "Transaction Prediction";
             this.ResumeLayout(false);

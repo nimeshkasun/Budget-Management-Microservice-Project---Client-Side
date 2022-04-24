@@ -88,6 +88,8 @@
             this.Controls.Add(this.txtCategoryIDSearch);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CategoryViewSearch";
             this.Text = "Category Search";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnSearchCategoryFormClose);

@@ -23,7 +23,21 @@ namespace Cw1_w1867890.VC
             DataObjects.DbInfo.SyncCategoryData();
             DataObjects.DbInfo.SyncTransactionData();
 
-            dataGridView1.DataSource = dbInfo.tblCategory;
+            dgvCategory.DataSource = dbInfo.tblCategory;
+            dgvCategory.Columns["catId"].Visible = false;
+            dgvCategory.Columns["catBudget"].Visible = false;
+            dgvCategory.Columns["catName"].HeaderCell.Value = "Category Name";
+            dgvCategory.Columns["catType"].HeaderCell.Value = "Category Type";
+
+
+            dgvTransaction.DataSource = dbInfo.tblTransaction;
+            dgvTransaction.Columns["tranCatId"].Visible = false;
+            dgvTransaction.Columns["tranId"].HeaderCell.Value = "Transaction ID";
+            dgvTransaction.Columns["tranDescription"].HeaderCell.Value = "Transaction Description";
+            dgvTransaction.Columns["tranDate"].HeaderCell.Value = "Recurring";
+            dgvTransaction.Columns["tranRecurring"].HeaderCell.Value = "Recurring";
+            dgvTransaction.Columns["tranAmount"].HeaderCell.Value = "Amount";
+
         }
 
         private void ExitApplication(object sender, EventArgs e)
@@ -36,7 +50,7 @@ namespace Cw1_w1867890.VC
             CategoryView categoryView = new CategoryView();
             categoryView.ShowDialog();
 
-            dataGridView1.DataSource = dbInfo.tblCategory;
+            dgvCategory.DataSource = dbInfo.tblCategory;
         }
 
         private void RunTransactionView(object sender, EventArgs e)
@@ -55,5 +69,11 @@ namespace Cw1_w1867890.VC
             DataObjects.DbInfo.SyncCategoryData();
             DataObjects.DbInfo.SyncTransactionData();
         }
+
+        private void UpdateSystemTime(object sender, EventArgs e)
+        {
+            lblSystemDateTime.Text = "System Date: " + DateTime.Now.ToString();
+        }
+
     }
 }

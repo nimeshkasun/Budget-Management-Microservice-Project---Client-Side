@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.chrtIncomeVsExpense = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dBBudget = new Cw1_w1867890.DataObjects.DBBudget();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,17 +54,17 @@
             // 
             // chrtIncomeVsExpense
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chrtIncomeVsExpense.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chrtIncomeVsExpense.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chrtIncomeVsExpense.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chrtIncomeVsExpense.Legends.Add(legend4);
             this.chrtIncomeVsExpense.Location = new System.Drawing.Point(27, 154);
             this.chrtIncomeVsExpense.Name = "chrtIncomeVsExpense";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "IncomeVsExpense";
-            this.chrtIncomeVsExpense.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "IncomeVsExpense";
+            this.chrtIncomeVsExpense.Series.Add(series2);
             this.chrtIncomeVsExpense.Size = new System.Drawing.Size(300, 300);
             this.chrtIncomeVsExpense.TabIndex = 0;
             this.chrtIncomeVsExpense.Text = "chart1";
@@ -132,10 +132,10 @@
             // 
             // chrtIncomeCategoryWise
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chrtIncomeCategoryWise.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chrtIncomeCategoryWise.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chrtIncomeCategoryWise.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chrtIncomeCategoryWise.Legends.Add(legend5);
             this.chrtIncomeCategoryWise.Location = new System.Drawing.Point(353, 154);
             this.chrtIncomeCategoryWise.Name = "chrtIncomeCategoryWise";
             this.chrtIncomeCategoryWise.Size = new System.Drawing.Size(300, 300);
@@ -144,10 +144,10 @@
             // 
             // chrtExpenseCategoryWise
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chrtExpenseCategoryWise.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chrtExpenseCategoryWise.Legends.Add(legend3);
+            chartArea6.Name = "ChartArea1";
+            this.chrtExpenseCategoryWise.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chrtExpenseCategoryWise.Legends.Add(legend6);
             this.chrtExpenseCategoryWise.Location = new System.Drawing.Point(676, 154);
             this.chrtExpenseCategoryWise.Name = "chrtExpenseCategoryWise";
             this.chrtExpenseCategoryWise.Size = new System.Drawing.Size(300, 300);
@@ -164,6 +164,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chrtIncomeVsExpense);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TransactionViewReport";
             this.Text = "Transaction Report";
             ((System.ComponentModel.ISupportInitialize)(this.chrtIncomeVsExpense)).EndInit();

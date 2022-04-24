@@ -24,6 +24,13 @@ namespace Cw1_w1867890.VC
             {
                 dbInfo = DataObjects.DbInfo.dbInfo;
                 dgvTransaction.DataSource = this.dbInfo.tblTransaction;
+                dgvTransaction.Columns["tranCatId"].Visible = false;
+                dgvTransaction.Columns["tranId"].HeaderCell.Value = "Transaction ID";
+                dgvTransaction.Columns["tranDescription"].HeaderCell.Value = "Transaction Description";
+                dgvTransaction.Columns["tranDate"].HeaderCell.Value = "Recurring";
+                dgvTransaction.Columns["tranRecurring"].HeaderCell.Value = "Recurring";
+                dgvTransaction.Columns["tranAmount"].HeaderCell.Value = "Amount";
+
                 cmbTransactionCategory.DataSource = this.dbInfo.tblCategory;
                 cmbTransactionCategory.SelectedIndex = -1;
             }

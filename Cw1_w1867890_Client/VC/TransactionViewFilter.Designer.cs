@@ -38,11 +38,11 @@
             this.dBBudget = new Cw1_w1867890.DataObjects.DBBudget();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateFromFilter = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateToFilter = new System.Windows.Forms.DateTimePicker();
             this.chkDateFilter = new System.Windows.Forms.CheckBox();
+            this.dateToFilter = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateFromFilter = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblCategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBBudget)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -129,40 +129,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date Range";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "From";
-            // 
-            // dateFromFilter
-            // 
-            this.dateFromFilter.Enabled = false;
-            this.dateFromFilter.Location = new System.Drawing.Point(109, 55);
-            this.dateFromFilter.Name = "dateFromFilter";
-            this.dateFromFilter.Size = new System.Drawing.Size(275, 20);
-            this.dateFromFilter.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "To";
-            // 
-            // dateToFilter
-            // 
-            this.dateToFilter.Enabled = false;
-            this.dateToFilter.Location = new System.Drawing.Point(109, 90);
-            this.dateToFilter.Name = "dateToFilter";
-            this.dateToFilter.Size = new System.Drawing.Size(275, 20);
-            this.dateToFilter.TabIndex = 3;
-            // 
             // chkDateFilter
             // 
             this.chkDateFilter.AutoSize = true;
@@ -173,6 +139,40 @@
             this.chkDateFilter.Text = "Filter by date?";
             this.chkDateFilter.UseVisualStyleBackColor = true;
             this.chkDateFilter.CheckedChanged += new System.EventHandler(this.OnFilterByDateCheckStateChange);
+            // 
+            // dateToFilter
+            // 
+            this.dateToFilter.Enabled = false;
+            this.dateToFilter.Location = new System.Drawing.Point(109, 90);
+            this.dateToFilter.Name = "dateToFilter";
+            this.dateToFilter.Size = new System.Drawing.Size(275, 20);
+            this.dateToFilter.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "To";
+            // 
+            // dateFromFilter
+            // 
+            this.dateFromFilter.Enabled = false;
+            this.dateFromFilter.Location = new System.Drawing.Point(109, 55);
+            this.dateFromFilter.Name = "dateFromFilter";
+            this.dateFromFilter.Size = new System.Drawing.Size(275, 20);
+            this.dateFromFilter.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "From";
             // 
             // TransactionViewFilter
             // 
@@ -187,6 +187,8 @@
             this.Controls.Add(this.txtTransactionIDFilter);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TransactionViewFilter";
             this.Text = "Transaction Filter";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnTransactionFilterFormClosed);

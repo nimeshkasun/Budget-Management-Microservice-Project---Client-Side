@@ -68,6 +68,8 @@
             this.Controls.Add(this.txtTransactionIDSearch);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TransactionViewSearch";
             this.Text = "Transaction Search";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnSearchTransactionFormClose);
