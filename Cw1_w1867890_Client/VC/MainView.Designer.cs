@@ -42,6 +42,7 @@
             this.dBBudget = new Cw1_w1867890.DataObjects.DBBudget();
             this.dgvTransaction = new System.Windows.Forms.DataGridView();
             this.lblSystemDateTime = new System.Windows.Forms.Label();
+            this.serviceStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblCategoryBindingSource)).BeginInit();
@@ -109,6 +110,8 @@
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.serviceStatusToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
@@ -161,11 +164,18 @@
             this.lblSystemDateTime.TabIndex = 3;
             this.lblSystemDateTime.Text = "<SystemDateTime>";
             // 
+            // serviceStatusToolStripMenuItem
+            // 
+            this.serviceStatusToolStripMenuItem.Name = "serviceStatusToolStripMenuItem";
+            this.serviceStatusToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.serviceStatusToolStripMenuItem.Text = "Service Health Check";
+            this.serviceStatusToolStripMenuItem.Click += new System.EventHandler(this.RunServiceHealthCheckView);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 367);
+            this.ClientSize = new System.Drawing.Size(1063, 388);
             this.Controls.Add(this.lblSystemDateTime);
             this.Controls.Add(this.dgvTransaction);
             this.Controls.Add(this.dgvCategory);
@@ -203,6 +213,7 @@
         private System.Windows.Forms.ToolStripMenuItem synchronizeDataToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvTransaction;
         private System.Windows.Forms.Label lblSystemDateTime;
+        private System.Windows.Forms.ToolStripMenuItem serviceStatusToolStripMenuItem;
     }
 }
 

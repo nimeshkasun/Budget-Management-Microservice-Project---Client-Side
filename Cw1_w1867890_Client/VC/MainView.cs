@@ -7,8 +7,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace Cw1_w1867890.VC
@@ -57,6 +59,12 @@ namespace Cw1_w1867890.VC
         {
             TransactionView transactionView = new TransactionView();
             transactionView.ShowDialog();
+        }
+
+        private void RunServiceHealthCheckView(object sender, EventArgs e)
+        {
+            ServiceHealthCheckView serviceHealthCheckView = new ServiceHealthCheckView();
+            serviceHealthCheckView.ShowDialog();
         }
 
         public DataObjects.DBBudget DB()

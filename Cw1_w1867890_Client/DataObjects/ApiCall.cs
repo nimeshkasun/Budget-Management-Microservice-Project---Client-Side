@@ -16,9 +16,12 @@ namespace Cw1_w1867890.DataObjects
         //
         // API Call URL Formatting (SUBJECT TO MODIFY)
         //
-        private static String gatewayHost = "https://localhost:44352/api/";
-        private static String gatewayServiceCategory = "CategoryService/";
-        private static String gatewayServiceTransaction = "TransactionService/";
+        //private static String gatewayHost = "https://localhost:44352/api/";
+        private static String gatewayHost = "https://iiteadcw2.azure-api.net/";
+        //private static String gatewayServiceCategory = "CategoryService/";
+        private static String gatewayServiceCategory = "s1/Category/";
+        //private static String gatewayServiceTransaction = "TransactionService/";
+        private static String gatewayServiceTransaction = "s2/Transaction/";
 
         public static String readAllCategory = gatewayHost + gatewayServiceCategory + "category/search/all";        
         public static String createCategory = gatewayHost + gatewayServiceCategory + "category/create";
