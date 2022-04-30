@@ -186,6 +186,7 @@
             this.Controls.Add(this.pbStatusAllServices);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblStatusAllServices);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ServiceHealthCheckView";
