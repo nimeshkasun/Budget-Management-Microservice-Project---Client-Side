@@ -112,7 +112,7 @@ namespace Cw1_w1867890.VC
                 }
                 else
                 {
-                    lblStatusAPIGateway.Text = "API Gateway Service Down";
+                    lblStatusAPIGateway.Text = "API Gateway Service Down or Timed out";
                     lblStatusAPIGateway.ForeColor = Color.Red;
                     pbStatusAPIGateway.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
                 }
@@ -120,7 +120,7 @@ namespace Cw1_w1867890.VC
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                lblStatusAPIGateway.Text = "API Gateway Service Down";
+                lblStatusAPIGateway.Text = "API Gateway Service Down or Timed out";
                 lblStatusAPIGateway.ForeColor = Color.Red;
                 pbStatusAPIGateway.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
@@ -140,7 +140,7 @@ namespace Cw1_w1867890.VC
                 }
                 else
                 {
-                    lblStatusAPIGatewayCategory.Text = "API Gateway Category Service Down";
+                    lblStatusAPIGatewayCategory.Text = "API Gateway Category Service Down or Timed out";
                     lblStatusAPIGatewayCategory.ForeColor = Color.Red;
                     pbStatusAPIGatewayCategory.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
                 }
@@ -148,7 +148,7 @@ namespace Cw1_w1867890.VC
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                lblStatusAPIGatewayCategory.Text = "API Gateway Category Service Down";
+                lblStatusAPIGatewayCategory.Text = "API Gateway Category Service Down or Timed out";
                 lblStatusAPIGatewayCategory.ForeColor = Color.Red;
                 pbStatusAPIGatewayCategory.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
@@ -168,7 +168,7 @@ namespace Cw1_w1867890.VC
                 }
                 else
                 {
-                    lblStatusAPIGatewayTransaction.Text = "API Gateway Transaction Service Down";
+                    lblStatusAPIGatewayTransaction.Text = "API Gateway Transaction Service Down or Timed out";
                     lblStatusAPIGatewayTransaction.ForeColor = Color.Red;
                     pbStatusAPIGatewayTransaction.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
                 }
@@ -176,7 +176,7 @@ namespace Cw1_w1867890.VC
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                lblStatusAPIGatewayTransaction.Text = "API Gateway Transaction Service Down";
+                lblStatusAPIGatewayTransaction.Text = "API Gateway Transaction Service Down or Timed out";
                 lblStatusAPIGatewayTransaction.ForeColor = Color.Red;
                 pbStatusAPIGatewayTransaction.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
@@ -196,7 +196,7 @@ namespace Cw1_w1867890.VC
                 }
                 else
                 {
-                    lblStatusServiceCategory.Text = "Category Service Endpoint Down";
+                    lblStatusServiceCategory.Text = "Category Service Endpoint Down or Timed out";
                     lblStatusServiceCategory.ForeColor = Color.Red;
                     pbStatusServiceCategory.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
                 }
@@ -204,7 +204,7 @@ namespace Cw1_w1867890.VC
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                lblStatusServiceCategory.Text = "Category Service Endpoint Down";
+                lblStatusServiceCategory.Text = "Category Service Endpoint Down or Timed out";
                 lblStatusServiceCategory.ForeColor = Color.Red;
                 pbStatusServiceCategory.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
@@ -224,7 +224,7 @@ namespace Cw1_w1867890.VC
                 }
                 else
                 {
-                    lblStatusServiceTransaction.Text = "Transaction Service Endpoint Down";
+                    lblStatusServiceTransaction.Text = "Transaction Service Endpoint Down or Timed out";
                     lblStatusServiceTransaction.ForeColor = Color.Red;
                     pbStatusServiceTransaction.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
                 }
@@ -232,7 +232,7 @@ namespace Cw1_w1867890.VC
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                lblStatusServiceTransaction.Text = "Transaction Service Endpoint Down";
+                lblStatusServiceTransaction.Text = "Transaction Service Endpoint Down or Timed out";
                 lblStatusServiceTransaction.ForeColor = Color.Red;
                 pbStatusServiceTransaction.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
