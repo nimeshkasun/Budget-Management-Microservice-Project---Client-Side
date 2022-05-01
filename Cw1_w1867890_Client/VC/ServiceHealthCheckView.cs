@@ -24,7 +24,12 @@ namespace Cw1_w1867890.VC
         public ServiceHealthCheckView()
         {
             InitializeComponent();
+            setDefTextAndIcon();
 
+        }
+
+        private void setDefTextAndIcon()
+        {
             try
             {
                 pbStatusAPIGateway.Image = Bitmap.FromHicon(new Icon(SystemIcons.Question, 20, 20).Handle);
@@ -33,6 +38,13 @@ namespace Cw1_w1867890.VC
                 pbStatusServiceCategory.Image = Bitmap.FromHicon(new Icon(SystemIcons.Question, 20, 20).Handle);
                 pbStatusServiceTransaction.Image = Bitmap.FromHicon(new Icon(SystemIcons.Question, 20, 20).Handle);
                 pbStatusAllServices.Image = Bitmap.FromHicon(new Icon(SystemIcons.Question, 20, 20).Handle);
+
+                lblStatusAPIGateway.Text = "Cheking...";
+                lblStatusAPIGatewayCategory.Text = "Cheking...";
+                lblStatusAPIGatewayTransaction.Text = "Cheking...";
+                lblStatusServiceCategory.Text = "Cheking...";
+                lblStatusServiceTransaction.Text = "Cheking...";
+                lblStatusAllServices.Text = "Cheking...";
             }
             catch (Exception ex)
             {
@@ -96,10 +108,15 @@ namespace Cw1_w1867890.VC
 
         private void OnRefreshHealth(object sender, EventArgs e)
         {
-           
+            btnRefreshHealth.Enabled = false;
+            setDefTextAndIcon();
+
+            lblStatusAPIGateway.Text = "Running...";
+            System.Threading.Thread.Sleep(3000);
             try
-            {
-                String Http_URL_API_Gateway = HttpUtility.UrlDecode("https://iiteadcw2.azure-api.net/");
+            {            
+                //String Http_URL_API_Gateway = HttpUtility.UrlDecode("https://iiteadcw2.azure-api.net/");
+                String Http_URL_API_Gateway = HttpUtility.UrlDecode("https://iitead.azure-api.net");
                 lObjReq = (HttpWebRequest)HttpWebRequest.Create(Http_URL_API_Gateway);
                 lObjReq.Timeout = 12000;
                 lObjReq.UseDefaultCredentials = true;
@@ -125,9 +142,13 @@ namespace Cw1_w1867890.VC
                 pbStatusAPIGateway.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
 
+
+            lblStatusAPIGatewayCategory.Text = "Running...";
+            System.Threading.Thread.Sleep(3000);
             try
             {
                 String Http_URL_API_Cat = HttpUtility.UrlDecode("https://iiteadcw2.azure-api.net/s1/Category/");
+                //String Http_URL_API_Cat = HttpUtility.UrlDecode("https://iitead.azure-api.net/s1/Category/");
                 lObjReq = (HttpWebRequest)HttpWebRequest.Create(Http_URL_API_Cat);
                 lObjReq.Timeout = 12000;
                 lObjReq.UseDefaultCredentials = true;
@@ -153,11 +174,15 @@ namespace Cw1_w1867890.VC
                 pbStatusAPIGatewayCategory.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
 
+
+            lblStatusAPIGatewayTransaction.Text = "Running...";
+            System.Threading.Thread.Sleep(3000);
             try
             {
                 String Http_URL_API_Tran = HttpUtility.UrlDecode("https://iiteadcw2.azure-api.net/s2/Transaction/");
+                //String Http_URL_API_Tran = HttpUtility.UrlDecode("https://iitead.azure-api.net/s2/Transaction/");
                 lObjReq = (HttpWebRequest)HttpWebRequest.Create(Http_URL_API_Tran);
-                lObjReq.Timeout = 36000;
+                lObjReq.Timeout = 12000;
                 lObjReq.UseDefaultCredentials = true;
                 if (lObjReq.GetResponse().ContentLength > 0)
                 {
@@ -181,6 +206,9 @@ namespace Cw1_w1867890.VC
                 pbStatusAPIGatewayTransaction.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
 
+
+            lblStatusServiceCategory.Text = "Running...";
+            System.Threading.Thread.Sleep(3000);
             try
             {
                 String Http_URL_Service_Cat = HttpUtility.UrlDecode("https://iiteadcw2categoryservice.azurewebsites.net/Category/");
@@ -209,6 +237,9 @@ namespace Cw1_w1867890.VC
                 pbStatusServiceCategory.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
 
+
+            lblStatusServiceTransaction.Text = "Running...";
+            System.Threading.Thread.Sleep(3000);
             try
             {
                 String Http_URL_Service_Tran = HttpUtility.UrlDecode("https://iiteadcw2transactionservice.azurewebsites.net/Transaction");
@@ -237,8 +268,11 @@ namespace Cw1_w1867890.VC
                 pbStatusServiceTransaction.Image = Bitmap.FromHicon(new Icon(SystemIcons.Error, 20, 20).Handle);
             }
 
+
+            lblStatusAllServices.Text = "Running...";
             checkAPIconnectionAllServices();
 
+            //btnRefreshHealth.Enabled = true;
         }
     }
 }

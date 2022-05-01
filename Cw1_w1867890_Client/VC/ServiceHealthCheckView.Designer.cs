@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblStatusAllServices = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefreshHealth = new System.Windows.Forms.Button();
             this.pbStatusAllServices = new System.Windows.Forms.PictureBox();
             this.pbStatusAPIGateway = new System.Windows.Forms.PictureBox();
             this.lblStatusAPIGateway = new System.Windows.Forms.Label();
@@ -58,15 +58,15 @@
             this.lblStatusAllServices.TabIndex = 5;
             this.lblStatusAllServices.Text = "Checking...";
             // 
-            // button1
+            // btnRefreshHealth
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(338, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Refresh Health";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.OnRefreshHealth);
+            this.btnRefreshHealth.Location = new System.Drawing.Point(12, 12);
+            this.btnRefreshHealth.Name = "btnRefreshHealth";
+            this.btnRefreshHealth.Size = new System.Drawing.Size(338, 40);
+            this.btnRefreshHealth.TabIndex = 6;
+            this.btnRefreshHealth.Text = "Refresh Health";
+            this.btnRefreshHealth.UseVisualStyleBackColor = true;
+            this.btnRefreshHealth.Click += new System.EventHandler(this.OnRefreshHealth);
             // 
             // pbStatusAllServices
             // 
@@ -184,7 +184,7 @@
             this.Controls.Add(this.pbStatusAPIGateway);
             this.Controls.Add(this.lblStatusAPIGateway);
             this.Controls.Add(this.pbStatusAllServices);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRefreshHealth);
             this.Controls.Add(this.lblStatusAllServices);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -205,7 +205,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblStatusAllServices;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefreshHealth;
         private System.Windows.Forms.PictureBox pbStatusAllServices;
         private System.Windows.Forms.PictureBox pbStatusAPIGateway;
         private System.Windows.Forms.Label lblStatusAPIGateway;
