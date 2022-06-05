@@ -42,7 +42,15 @@ namespace Cw1_w1867890.VC
                 .Where(r => r.Field<DateTime>("tranDate").Year == selectedDateOfPrediction.Year
                           && r.Field<DateTime>("tranDate").Month == selectedDateOfPrediction.Month-1);
 
-            dataTable = thisMonthRows.CopyToDataTable();
+            try
+            {
+                dataTable = thisMonthRows.CopyToDataTable();
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+            }
             //dataSet.Tables[1].Equals(thisMonthRows);
 
             dataSet.AcceptChanges();
